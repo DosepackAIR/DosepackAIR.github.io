@@ -107,7 +107,7 @@ Green Car Source: D5W - - - - Green Car Destination: D2E 
 Red Car Source: D8S - - - - - Red Car Destination: D4S
 Blue Car Source: D7W - - - - - Blue Car Destination: D1N
 
-## The State would be D5WxD2EzD7xD1zD8xD4. 
+### The State would be D5WxD2EzD7xD1zD8xD4. 
 
 The Primary Car information always comes first. As stated above, we use the complete information for the Primary Car but we don't include the orientations of the Secondary Cars. Hence, for the Secondary Cars, their Box Numbers are sufficient. We use 'x' to differentiate between the source and destinations of a particular car and 'z' to differentiate among various cars themselves.
 After fixing the primary car in the beginning of the state, the remaining data is sorted in ascending order based on the Source values of other cars which is why for the above example, after fixing D5W and D2E in the beginning, we have the data for the Blue Car followed by the Green Car (D7<D8).
