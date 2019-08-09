@@ -149,9 +149,7 @@ We will focus on solving this by re-designing the reward function or extending o
 <img src="https://media.giphy.com/media/OqJp9fcjk9HpWBuF4u/giphy.gif" width="800" height="400"/>
 
 
-If you liked my article 3000, please click the 👏 below as many times as you can so other people can see this here on Medium. 
-
-If you have any thoughts, comments, questions, feel free to comment below or send me an email: shivann@dosepack.com or shivan.nawal@gmail.com.
+If you have any thoughts, comments, questions, feel free to comment below or send me an email: air@dosepack.com
 
 Cheers !
 
