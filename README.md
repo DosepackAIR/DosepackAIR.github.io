@@ -25,7 +25,7 @@ Multi Agent RL is a topic of ongoing research because of the inherent difficulty
 
 # Problem Statement
 
-Our problem statement, Multi Agent Reinforcement Learning - Dense Path Planning (MARL-DPP), can be surmised as a Navigation Based Path Problem. This area of research is mainly correlated with finding optimality among  multiple navigating robots that interact with each other, providing each other information of their locations along with their destinations that gives rise to the "Navigation" aspect in the aforementioned problem statement.
+Our problem statement, Multi Agent Reinforcement Learning - Dense Path Planning (MARL-DPP), can be surmised as a Navigation Based Path Planning Problem. This area of research is mainly correlated with finding optimality among  multiple navigating robots that interact with each other, providing each other information of their locations along with their destinations that gives rise to the "Navigation" aspect in the aforementioned problem statement.
 
 Building on this, we have made our research relevant to this area of study and have built the mechanics of a complete world that focuses on the small intricacies present in a N x M square environment that allows us to define as well as customize said environment to our purpose providing us with a rich interface required for complex navigation among multiple robots.
 
