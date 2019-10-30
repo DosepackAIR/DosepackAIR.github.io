@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dosepack AI Research (D-AIR)</title>
+    <description></description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 30 Oct 2019 18:41:13 +0530</pubDate>
+    <lastBuildDate>Wed, 30 Oct 2019 18:41:13 +0530</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>RL is deep</title>
+        <description>&lt;h1 id=&quot;rl-isdeep&quot;&gt;RL is Deep&lt;/h1&gt;
+
+&lt;p&gt;AI, is on a boom. I turn around and see preschoolers talking about the latest research papers in the community and how their desktop doesn’t have enough GPU computation power.&lt;/p&gt;
+
+&lt;p&gt;Sure, I may have exaggerated a bit but the situation is still pretty hyped up. With recent advancements in Deep Learning, experts have been able to defeat Pro-players in MMO games, the realization of Self Driving Cars has become seemingly plausible, Googles BERT has achieved SOTA in complex NLP tasks etc.&lt;/p&gt;
+
+&lt;p&gt;One area of AI research that has gained considerable traction in recent times is Reinforcement Learning. With Open-AI successfully defeating Pro teams in DOTA and DeepMind taking down the No-1 Player in Go, it looks like the machines are ready to take over.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://giphygifs.s3.amazonaws.com/media/cEYFeE1QgHWH2YADVHG/giphy.gif&quot; width=&quot;800&quot; height=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The idea behind Reinforcement Learning comprises of an agent, through its interaction with the environment by performing actions, which receives rewards that provide it with an intuition about its performance and tries to learn from its mistakes.&lt;/p&gt;
+
+&lt;p&gt;This process is very similar to what happens in the real world and serves as a backbone for the conceptualization of RL.&lt;/p&gt;
+
+&lt;h1 id=&quot;multi-agentrl&quot;&gt;Multi Agent RL&lt;/h1&gt;
+
+&lt;p&gt;Considering the real world scenario, people need to work with other people to achieve their goals while being wary of each others position and have to act accordingly. This is team-work and is required in all aspects of life.&lt;/p&gt;
+
+&lt;p&gt;Building on this, Multi-Agent RL is a branch of Reinforcement Learning that aims in dealing with environments consisting of multiple agents where each agent tries to work through its own goals while having information of its counterparts and acts in such a way that benefits the whole system of agents rather than selfishly fulfilling its own goal.&lt;/p&gt;
+
+&lt;p&gt;Multi Agent RL is a topic of ongoing research because of the inherent difficulty of balancing the idea between efficient teamwork and self prioritization. This has been further stressed upon in a number of other research papers and blogs such as
+&lt;a href=&quot;https://deepmind.com/research/publications/learning-communicate-deep-multi-agent-reinforcement-learning/&quot;&gt;DeepMind&lt;/a&gt;, &lt;a href=&quot;https://bair.berkeley.edu/blog/2018/12/12/rllib/&quot;&gt;Berkeley&lt;/a&gt; , &lt;a href=&quot;https://openai.com/blog/learning-to-cooperate-compete-and-communicate/&quot;&gt;Open-AI&lt;/a&gt; etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/hUulR6GxsaVq0/giphy.gif&quot; width=&quot;800&quot; height=&quot;500&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;problem-statement&quot;&gt;Problem Statement&lt;/h1&gt;
+
+&lt;p&gt;Our problem statement, Multi Agent Reinforcement Learning - Dense Path Planning (MARL-DPP), can be surmised as a Navigation Based Path Planning Problem. This area of research is mainly correlated with finding optimality among  multiple navigating robots that interact with each other, providing each other information of their locations along with their destinations that gives rise to the “Navigation” aspect in the aforementioned problem statement.&lt;/p&gt;
+
+&lt;p&gt;Building on this, we have made our research relevant to this area of study and have built the mechanics of a complete world that focuses on the small intricacies present in a N x M square environment that allows us to define as well as customize said environment to our purpose providing us with a rich interface required for complex navigation among multiple robots.&lt;/p&gt;
+
+&lt;p&gt;Rules for traveling among different nodes of the environment, a framework for providing multiple destinations to the navigating robots, customizing locations that can serve as obstacles in the environment are some of the features that are available and can also be further developed to integrate some of the users own mechanics to serve their purpose.&lt;/p&gt;
+
+&lt;p&gt;The robots involved in Navigation are also provided with an orientation corresponding to the real world cardinal directions that allow the robots to “dock” themselves in the required position on reaching their respective goals as defined by the environment. The path planning process takes this orientation into consideration and provides the robot with optimal strategies.&lt;/p&gt;
+
+&lt;p&gt;The agents in the system have to collaborate and cooperate with each other in order to complete their respective tasks. This is stressed even more when the robots in the system are in a deadlock and have no choice but to create a balance between their own optimality and collaboration with other robots in order for efficient solving of the system.&lt;/p&gt;
+
+&lt;h1 id=&quot;application&quot;&gt;Application&lt;/h1&gt;
+
+&lt;p&gt;Multi-Agent Navigation is/can be used for various transport problems such as in warehouses and factories that involve coordination among robots for exchanging and delivering goods to each other. Another use case would be to resolve Deadlocks in traffic as well as solving Parking Space inadequacies for efficient utilization of space. Recently, MIT hosted a competition specifically tackling these problems.&lt;/p&gt;
+
+&lt;h1 id=&quot;brief-introduction-and-motivation&quot;&gt;Brief Introduction and Motivation&lt;/h1&gt;
+
+&lt;p&gt;Over the years, RL has progressed through a number of different approaches to solve optimization problems but these approaches can be broadly categorized as Value Based, Policy Based and Model Based. Our current approach is dependent on the Value Based method as it offers a lot of benefits over other methods and will be elaborated on  later in the post.&lt;/p&gt;
+
+&lt;h2 id=&quot;value-based&quot;&gt;Value Based&lt;/h2&gt;
+
+&lt;p&gt;A State in RL can be thought of as a screenshot of the environment at any point in time. It encapsulates any and all information that needs to be present and is required by the agents in the system to make informed decisions during the training process.&lt;/p&gt;
+
+&lt;p&gt;In Value Based approaches, we try to calculate and optimize the value function denoted as V(s). The value of each state is the total amount of the reward an agent can expect to accumulate over the future, starting at that state.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/755/0*kvtRAhBZO-h77Iw1.&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;q-learning&quot;&gt;Q-Learning&lt;/h2&gt;
+
+&lt;p&gt;The Action Value Function (or Q-function) takes two inputs: State and action. It returns the expected future reward of that action at that state.&lt;/p&gt;
+
+&lt;p&gt;Q-Learning is a tabular approach to RL which is used to calculate the Expected Discounted cumulative reward of an action in a particular State.&lt;/p&gt;
+
+&lt;p&gt;For an in depth explanation on Q-Learning, refer to the link below.
+&lt;a href=&quot;https://www.freecodecamp.org/news/an-introduction-to-q-learning-reinforcement-learning-14ac0b4493cc/&quot;&gt;Q-Learning explained&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;why-q-learning&quot;&gt;Why Q-Learning&lt;/h2&gt;
+
+&lt;p&gt;Q-Learning is a model-free reinforcement learning algorithm. The goal of Q-Learning is to learn a policy, which tells an agent what action to take under what circumstances. It does not require a model (hence ‘model-free’) of the environment, and it can handle problems with stochastic transitions and rewards, without requiring adaptations. Q-Learning can identify an optimal action-selection policy for any given Finite MDP, given enough exploration time and a partly-random policy.&lt;/p&gt;
+
+&lt;p&gt;Implementing Q-Learning takes less time as compared to other algorithms and can be easily studied for debugging purposes as it does not contain any black box elements in its process. Because of all the above reasons, Q-Learning served as a perfect first algorithm to test the feasibility of solving our Problem Statement and gaining an intuition of RL in particular.&lt;/p&gt;
+
+&lt;p&gt;Also, Q-Learning can do some pretty awesome things like,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/XEDjXbqbHczQodXIkG/giphy.gif&quot; width=&quot;400&quot; height=&quot;250&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the above GIF, each agent in the environment has a destination that lies in someone else’s optimal path and is thus impossible to solve without inherent coordination among every one of the agents.&lt;/p&gt;
+
+&lt;h1 id=&quot;implementation-detail&quot;&gt;Implementation Detail&lt;/h1&gt;
+
+&lt;p&gt;Our Project focuses on solving the navigation of Multiple Agents (an agent can be understood as a car) in the environment using Q-Learning based approaches.&lt;/p&gt;
+
+&lt;p&gt;The Environment is a 2D square grid and consists of 2 floors. The number of rows and columns are predefined and can be customized to the users liking. The agents in the environment are assumed to be cars that need to travel to their respective destinations. Both floors have a single 3x3 block.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.freeimagehosting.net/commercial-photography/&quot;&gt;&lt;img src=&quot;https://i.imgur.com/cck5uG5.jpg&quot; alt=&quot;Commercial Photography&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The numbering of the boxes in the environment are made to be in top-down fashion. For example, in the 3x3 environment image above, the green, blue and red cars are in boxes 5, 7 and 8 respectively. The black area below are boxes that can’t be accessed and serve as obstacles in the environment. The location of these boxes can be customized.&lt;/p&gt;
+
+&lt;p&gt;The circles in the environment represent the direction of the car, namely any one of the possible orientations N, E, W and S.&lt;/p&gt;
+
+&lt;p&gt;The blue outline around some of the boxes represent the possible destinations the cars can have. Each car will be traveling to any one of these destinations&lt;/p&gt;
+
+&lt;h1 id=&quot;state-representation&quot;&gt;State Representation&lt;/h1&gt;
+
+&lt;p&gt;The State is a minimalistic representation of our environment at any specific point in time and encodes information necessary for training the agents.&lt;/p&gt;
+
+&lt;p&gt;For our environment, we have represented the State as a string which contains the source and destinations of the cars available in the environment. Based on the floor, the State uses D for representing the down floor and U to to represent the upper floor.
+The State can be interpreted by choosing a single car to be the Primary car and the remaining cars as the Secondary cars.&lt;/p&gt;
+
+&lt;h2 id=&quot;concept-of-primary-and-secondary-car&quot;&gt;Concept of Primary and Secondary Car&lt;/h2&gt;
+&lt;p&gt;The State is always written using the perspective of the Primary Car. The Primary car is an agent which is chosen out of all the available cars and has more information encoded in the State string than other cars. &lt;/p&gt;
+
+&lt;h2 id=&quot;example-of-a-state&quot;&gt;Example of a State&lt;/h2&gt;
+&lt;p&gt;Using the image above, let us assume the destinations of the 3 cars in order to write the complete State. Choosing the Green Car to be the primary car and the floor to be down we have,
+Green Car Source: D5W - - - - Green Car Destination: D2E 
+Red Car Source: D8S - - - - - Red Car Destination: D4S
+Blue Car Source: D7W - - - - - Blue Car Destination: D1N&lt;/p&gt;
+
+&lt;h3 id=&quot;the-state-would-be-d5wxd2ezd7xd1zd8xd4&quot;&gt;The State would be D5WxD2EzD7xD1zD8xD4. &lt;/h3&gt;
+
+&lt;p&gt;The Primary Car information always comes first. As stated above, we use the complete information for the Primary Car but we don’t include the orientations of the Secondary Cars. Hence, for the Secondary Cars, their Box Numbers are sufficient. We use ‘x’ to differentiate between the source and destinations of a particular car and ‘z’ to differentiate among various cars themselves.
+After fixing the primary car in the beginning of the state, the remaining data is sorted in ascending order based on the Source values of other cars which is why for the above example, after fixing D5W and D2E in the beginning, we have the data for the Blue Car followed by the Green Car (D7&amp;lt;D8).&lt;/p&gt;
+
+&lt;h1 id=&quot;reward-shaping&quot;&gt;Reward Shaping&lt;/h1&gt;
+
+&lt;p&gt;Our Reward function is based on the Breadth First Search algorithm which finds the shortest path among two locations.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif&quot; width=&quot;400&quot; height=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;rewards&quot;&gt;Rewards&lt;/h2&gt;
+
+&lt;p&gt;The reward values for any agent is based on the difference in the number of steps/actions it takes for the agent before and after performing an action.&lt;/p&gt;
+
+&lt;p&gt;For example, in the above GIF, lets assume we need to reach 4 starting from 1. The number of actions it will take to reach 4 from 1 is 2. If we perform an action and move onto 2, the number of actions required to reach 4 from 2 is 1.&lt;/p&gt;
+
+&lt;p&gt;Hence, the difference in the number of actions is 2–1 = 1. A positive difference indicates that we have moved closer to our goal after performing that action and a negative reward tells us that we are now further away from our goal than we were before.&lt;/p&gt;
+
+&lt;p&gt;We also provide a mandatory slightly negative reward indicating that every action the agent has to take tells it that it hasn’t reached its goal and epitomizes faster completion of its task.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/69jy0H4XhmXmZxWsRA/giphy.gif&quot; width=&quot;800&quot; height=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;future-scope&quot;&gt;Future Scope&lt;/h1&gt;
+
+&lt;p&gt;For this project, we will try to tackle the following challenges in the future&lt;/p&gt;
+
+&lt;h2 id=&quot;generalized-multi-agent-training&quot;&gt;Generalized Multi Agent training&lt;/h2&gt;
+
+&lt;p&gt;We have successfully trained multiple agents on a 2D maze but since Q-Learning is a table based look-up method, it does not provide  any kind of generalization to other environments. &lt;/p&gt;
+
+&lt;p&gt;Since the uprising of Deep-Reinforcement Learning, the problem of generalization has been under constant research. Future work will focus on implementing the current architecture from a Deep-RL perspective to solve generalization.&lt;/p&gt;
+
+&lt;h2 id=&quot;deadlocks&quot;&gt;Deadlocks&lt;/h2&gt;
+&lt;p&gt;A Deadlock is a condition present in a State where 2 or more agents block each others paths and are not able to move to their respective destinations. This results in either sub-optimality in the navigation of the agents involved in the Deadlock or results in a complete halting of the system of agents. Our current system is able to handle Deadlocks by saving such states and solving them separately but the current architecture can be improved in solving Deadlocks without any bookkeeping.&lt;/p&gt;
+
+&lt;p&gt;We will focus on solving this by re-designing the reward function or extending our approach to receding horizon planning.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/OqJp9fcjk9HpWBuF4u/giphy.gif&quot; width=&quot;800&quot; height=&quot;400&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have any thoughts, comments, questions, feel free to comment below or send me an email: air@dosepack.com&lt;/p&gt;
+
+&lt;p&gt;Cheers !&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/DosepackAIR/MARL-DPP&quot;&gt;Github repo&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 23 Oct 2019 03:30:00 +0530</pubDate>
+        <link>http://localhost:4000/2019/10/23/RL-is-deep/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/10/23/RL-is-deep/</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

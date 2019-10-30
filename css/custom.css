@@ -1,0 +1,31 @@
+
+body{
+    font-family: 'Lato', sans-serif;
+    letter-spacing:0.8px;
+    background: #ccc !important;
+}
+.header-nav_link,.main-header_title{
+    color: #000 !important;
+} 
+.page-content{
+    background:#f2f2f2;
+}
+.x_post{background: #fff; padding: 50px 80px; font-size: 30px; line-height: 160%; border-radius: 10px;}
+.x_post_in{padding: 10px 0; border-bottom: 0.5px solid #ccc;}
+.x_post_in span,.x_post_in p{font-size: 15px; line-height: 20px;}
+
+.post-content{
+    font-size: 20px;
+    width:80%;
+    text-align: left; line-height: 26px; word-spacing: 1px; background: #fff; padding: 40px 80px;
+}
+.nav-link{
+    text-decoration: none;
+    font-size: 20px; outline: none;
+    padding: 10px;
+
+}
+.nav-link:hover{
+    text-decoration: none;
+    border-bottom: 2px solid #000;
+}

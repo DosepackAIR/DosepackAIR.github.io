@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="">
+  
+
+
+
+  <div class="x_post">
+      {% for post in site.posts %}
+      <div class="x_post_in">
+          <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+      </br>
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <br>
+          <p>{{ post.excerpt }}</p>
+     </div>
+      
+    {% endfor %}
+ 
+  </div>
+
+</div>

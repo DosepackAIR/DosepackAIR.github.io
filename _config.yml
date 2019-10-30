@@ -1,1 +1,16 @@
-theme: jekyll-theme-cayman
+title: Dosepack AI Research (D-AIR)
+email: air@dosepack.com
+description: ""
+baseurl: ""
+url: "http://dosepackair.github.io"
+twitter_username: dosepackair
+github_username:  dosepackair
+
+markdown: kramdown
+permalink: pretty
+
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
